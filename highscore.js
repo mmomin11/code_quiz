@@ -24,3 +24,7 @@ if (allScores !== null) {
     }
 }
 // event listener to click a button to return to main page
+
+goBack.addEventListener("click", function () {
+    window.location.replace("./index.html");
+});
