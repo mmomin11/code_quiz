@@ -127,8 +127,8 @@ createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + quest
 render(questionIndex);
 }
 questionsDiv.appendChild(createDiv);
-
 }
+
 // all done appends last page
 
     // heading
