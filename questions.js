@@ -1,5 +1,39 @@
 // variable with an array of questions
+var questions = [
+    {
+        title: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+    {
+        title: "What tag defines a division or the beginning/end of an individual section in an HTML document?",
+        choices: ["<table>", "<meta>", "<img>", "<div>"],
+        answer: "<div>"
+    },
+    
+    {
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts"
+    },
 
+    {
+        title: "String values must be enclosed within ____ when being assigned to variables.",
+        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "quotes"
+    },
+    {
+        title: "In JavaScript, what is used in conjunction with HTML to “react” to certain elements?",
+        choices: ["RegExp", "Events", "boolean", "Condition"],
+        answer: "Events"
+    },
+    {
+        title: "What is the type of loop that continues through a block of code as long as the specified condition remains TRUE?",
+        choices: ["Conditional Loop", "Else Loop", "While Loop", "For Loop"],
+        answer: "While Loop"
+    },
+
+];
 // declared variables to count the score
 
 // begin my variables to strt working code
