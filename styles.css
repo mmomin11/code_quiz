@@ -30,6 +30,23 @@ textarea {
     margin: 20px;
 }
 
+#Submit {
+    background-color: purple;
+    margin-left: 33%;
+    padding: 15px 32px;
+    font-size: 20px;
+    color: white;
+}
+
+label {
+    margin-right: 10px;
+}
+input {
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid lightgray;
+}
+
 h1 {
     text-align: center;
 }
@@ -41,4 +58,9 @@ li {
     width: 80%;
     font-size: 18px;
     color: white;
+}
+
+#createDiv {
+    margin-top: 20px;
+    border-top: 1px solid lightgray;
 }
