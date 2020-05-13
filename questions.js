@@ -66,6 +66,7 @@ timer.addEventListener("click", function () {
             }
         }, 1000);
     }
+    render(questionIndex);
 });
 
 
@@ -92,11 +93,42 @@ userChoices.forEach(function (newItem) {
 
 
 // event to compare choices with the correct answer
+
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        // Correct condition 
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
+            // Correct condition 
+        } else {
+
     // need to deduct time if wrong answer
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+        }
+
+    }
 
 // question index to determine which question user is on
-    // all doen question to append wth the user stats
 
+questionIndex++;
+
+if (questionIndex >= questions.length) {
+// all doen question to append wth the user stats
+allDone();
+createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+} else {
+render(questionIndex);
+}
+questionsDiv.appendChild(createDiv);
+
+}
 // all done appends last page
 
     // heading
