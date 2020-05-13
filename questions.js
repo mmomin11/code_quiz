@@ -70,12 +70,26 @@ timer.addEventListener("click", function () {
 
 
 // rendering questions and choices to the page
-
+function render(questionIndex) {
 // clear existing data
-
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
 // for loop to go through the array of questions
-
+for (var i = 0; i < questions.length; i++) {
+    var userQuestion = questions[questionIndex].title;
+    var userChoices = questions[questionIndex].choices;
+    questionsDiv.textContent = userQuestion;
+}
 // new for each for question choices
+userChoices.forEach(function (newItem) {
+    var listItem = document.createElement("li");
+    listItem.textContent = newItem;
+    questionsDiv.appendChild(ulCreate);
+    ulCreate.appendChild(listItem);
+    listItem.addEventListener("click", (compare));
+})
+}
+
 
 // event to compare choices with the correct answer
     // need to deduct time if wrong answer
