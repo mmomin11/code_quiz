@@ -155,7 +155,7 @@ function allDone() {
 
         questionsDiv.appendChild(createP2);
     }
-}
+
     // label
 
     var createLabel = document.createElement("label");
@@ -165,8 +165,20 @@ function allDone() {
     questionsDiv.appendChild(createLabel);
 
     // input
-    // submit question
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "initials");
+    createInput.textContent = "";
 
+    questionsDiv.appendChild(createInput);
+
+    // submit question
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "Submit");
+    createSubmit.textContent = "Submit";
+
+    questionsDiv.appendChild(createSubmit);
 // event listener to capture initials and local storage for initials and score
 
-
+}
