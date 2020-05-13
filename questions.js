@@ -37,13 +37,37 @@ var questions = [
 // declared variables to count the score
 
 // begin my variables to strt working code
+var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#startTime");
+var questionsDiv = document.querySelector("#questionsDiv");
+var wrapper = document.querySelector("#wrapper");
+
 
 // seconds lrft of 15 seconds
+var secondsLeft = 76;
 // holds interval time
+var holdInterval = 0;
 // holds penalty time
+var penalty = 10;
 // new list element
+var listCreate = document.createElement("ul");
 
 // timer function that shows the timer going down. 
+timer.addEventListener("click", function () {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            currentTime.textcontent = "Time: " + secondsLeft;
+
+            if(secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                allDone();
+                currentTime.textcontent = "Time's up!";
+            }
+        }, 1000);
+    }
+});
+
 
 // rendering questions and choices to the page
 
