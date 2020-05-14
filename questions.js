@@ -35,6 +35,8 @@ var questions = [
 
 ];
 // declared variables to count the score
+var score = 0;
+var questionIndex = 0;
 
 // begin my variables to strt working code
 var currentTime = document.querySelector("#currentTime");
@@ -50,25 +52,24 @@ var holdInterval = 0;
 // holds penalty time
 var penalty = 10;
 // new list element
-var listCreate = document.createElement("ul");
+var ulCreate = document.createElement("ul");
 
 // timer function that shows the timer going down. 
 timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            currentTime.textcontent = "Time: " + secondsLeft;
+            currentTime.textContent = "Time: " + secondsLeft;
 
             if(secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                currentTime.textcontent = "Time's up!";
+                currentTime.textContent = "Time's up!";
             }
         }, 1000);
     }
     render(questionIndex);
 });
-
 
 // rendering questions and choices to the page
 function render(questionIndex) {
@@ -80,7 +81,7 @@ for (var i = 0; i < questions.length; i++) {
     var userQuestion = questions[questionIndex].title;
     var userChoices = questions[questionIndex].choices;
     questionsDiv.textContent = userQuestion;
-}
+};
 // new for each for question choices
 userChoices.forEach(function (newItem) {
     var listItem = document.createElement("li");
@@ -88,8 +89,8 @@ userChoices.forEach(function (newItem) {
     questionsDiv.appendChild(ulCreate);
     ulCreate.appendChild(listItem);
     listItem.addEventListener("click", (compare));
-})
-}
+    });
+};
 
 
 // event to compare choices with the correct answer
@@ -107,7 +108,6 @@ function compare(event) {
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
             // Correct condition 
         } else {
-
     // need to deduct time if wrong answer
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
@@ -181,7 +181,7 @@ function allDone() {
     questionsDiv.appendChild(createSubmit);
     
 // event listener to capture initials and local storage for initials and score
-createSubmit.addEventListener("click", function () {
+    createSubmit.addEventListener("click", function () {
     var initials = createInput.value;
 
     if (initials === null) {
@@ -204,7 +204,7 @@ createSubmit.addEventListener("click", function () {
         var newScore = JSON.stringify(allScores);
         localStorage.setItem("allScores", newScore);
         // Travels to final page
-        window.location.replace("./HighScores.html");
+        window.location.replace("./highscore.html");
     }
 });
 }
